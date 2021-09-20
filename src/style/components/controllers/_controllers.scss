@@ -1,0 +1,25 @@
+.logo {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.controllers_sides {
+  position: absolute;
+  //left: 0;
+  top: 51%;
+  transform: translateY(-50%);
+  height: 200px;
+  margin-left: 5px;
+  width: 200px;
+}
+.controllers_menu {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  margin-right: 5px;
+  z-index: 10000;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+}

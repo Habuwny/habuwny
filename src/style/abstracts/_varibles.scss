@@ -1,0 +1,47 @@
+@use "sass:map";
+
+//COLORS
+$theme-brand: (
+  primary: #823993,
+  secondary: #9e6eaf,
+  third: #62bb44,
+  muted: #c6daf7,
+);
+$theme-ui: (
+  primary: #22223b,
+  secondary: #4a4e69,
+  tertiary: #9a8c98,
+  quaternary: #c9ada7,
+  quintuple: #f2e9e4,
+  disabled: #dedede,
+  error: #c3423f,
+  success: #138000,
+  note: #fca311,
+);
+$theme-bg: (
+  primary: #0d1321,
+  secondary: #1d2d44,
+);
+$theme-text: (
+  primary: #262626,
+  secondary: #757575,
+  disabled: #9c9c9c,
+  inverse: #ffffff,
+  error: #d0421b,
+  success: #138000,
+  note: #fca311,
+);
+///
+//$depth: 5vmin;
+//$on: 25vmin;
+//$bg: hsl(%s, %s, %s) %
+//  (
+//    calc(200 - (var($on) * 160)) calc((20 + (var($on) * 50)) * 1%)
+//      calc((20 + (var($on) * 60)) * 1%)
+//  );
+//$cord: 'hsl(0, 0%, %s)' % (calc((60 - (var($on) * 50)) * 1%));
+//$stroke: 'hsl(0, 0%, %s)' % (calc((60 - (var($on) * 50)) * 1%));
+//$shine: 'hsla(0, 0%, 100%, %s)' % calc(0.75 - (var($on) * 0.5));
+//$cap: 'hsl(0, 0%, %s)' % calc((40 + (var($on) * 30)) * 1%);
+//$filament: 'hsl(45, %s, %s)' %
+//  (calc(var($on) * 80%) calc((25 + (var($on) * 75)) * 1%));
