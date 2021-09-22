@@ -1,0 +1,5 @@
+.heading-primary {
+  font-size: map-get($heading, 'primary');
+  font-family: "Roboto Black", sans-serif;
+  letter-spacing: map_get($spacing, 'small');
+}

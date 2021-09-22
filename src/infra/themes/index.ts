@@ -4,9 +4,9 @@ import { dayColors } from "./day/colors";
 import { nightColors } from "./night/colors";
 import { heartColors } from "./heart/colors";
 import { defaultColors } from "./default/colors";
+import { ColorTheme } from "./colorTheme";
 
-const themColor = () => {
-  const theme = useTypedSelector((state) => state.theme.currentTheme);
+export const themColor = (theme: string): ColorTheme => {
   let colors;
   if (
     theme === "default_full" ||
