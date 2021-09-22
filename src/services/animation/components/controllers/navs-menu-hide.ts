@@ -35,11 +35,11 @@ export const navsMenuHide = () => {
       ease: Power4.easeIn,
     })
     .to("#logoRightSide", { x: 0 })
-    .to("#logoLeftSide", { x: 0 }, "<")
+    .to("#logoLeftSide", { x: 0 }, "<");
 
-    .to(".navMenu", {
-      visibility: "hidden",
-    });
+  // .to(".navMenu", {
+  //   visibility: "hidden",
+  // });
 
   return tl;
 };

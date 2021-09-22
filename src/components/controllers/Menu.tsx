@@ -20,7 +20,31 @@ export const Menu = () => {
   const tls = useTypedSelector((state: any) => state.tls);
   const [id, setId] = useState<string>();
 
-  const onLinkClick = () => {
+  const resetMenuLinks = () => {
+    let links = [
+      ".navMenu__Links-link-half1",
+      ".navMenu__Links-link-half2",
+      ".navMenu__Links-link-text",
+    ];
+    gsap.set(links[0], {
+      backgroundColor: topColor,
+      height: "50%",
+      borderTopLeftRadius: "15px",
+      borderTopRightRadius: "15px",
+      borderBottomLeftRadius: 0,
+      borderBottomRightRadius: 0,
+    });
+    gsap.set(links[1], {
+      backgroundColor: bottomColor,
+      height: "50%",
+      borderBottomLeftRadius: "15px",
+      borderBottomRightRadius: "15px",
+      borderTopLeftRadius: 0,
+      borderTopRightRadius: 0,
+    });
+    gsap.set(links[2], { color: "#ddd" });
+  };
+  const onLinkClick = (e: any) => {
     if (menuVisibility === "visible") {
       menuState("hidden");
     } else if (menuVisibility === "hidden") {
@@ -28,10 +52,11 @@ export const Menu = () => {
     }
     endTl(theme, tls);
     navsMenuHide();
+    resetMenuLinks();
   };
   const onMouseOver = (e: any) => {
+    resetMenuLinks();
     const tags = e.target.parentElement.children;
-
     if (e.target.parentElement!?.classList[0] === id || tags.length !== 3)
       return;
     if (

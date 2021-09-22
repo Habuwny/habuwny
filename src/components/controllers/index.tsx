@@ -16,12 +16,13 @@ export const Controllers = () => {
   useEffect(() => {
     console.log(tls, "tls");
     if (loc === "/") {
-      if (tls.portfolio_side.tl.paused()) {
-        tls.portfolio_side.tl.resume();
+      if (tls.portfolio_side?.tl.paused()) {
+        gsap.set(".controllers_sides-parts", { scale: 1 });
+        tls.portfolio_side?.tl.resume();
       }
     } else {
-      tls.portfolio_side.tl.pause();
-      gsap.set(".controllers_sides", { visibility: "hidden" });
+      tls.portfolio_side?.tl.pause();
+      gsap.set(".controllers_sides-parts", { scale: 0.005 });
     }
     const onResize = () => {
       setWidth(window.innerWidth);
@@ -34,7 +35,7 @@ export const Controllers = () => {
       <div className={"controllers_menu"}>
         <MenuIcon />
       </div>
-      <div className={"controllers_sides"}>
+      <div>
         <Sides />
       </div>
       <div className={"logo"}>
