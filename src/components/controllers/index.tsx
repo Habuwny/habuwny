@@ -5,7 +5,6 @@ import { MenuIcon } from "./menuIcon";
 import { Menu } from "./Menu";
 import { useLocation } from "react-router-dom";
 import gsap from "gsap";
-import { portfolioAnimation } from "../../services/animation/components/controllers/portfolioAnimation";
 import { useTypedSelector } from "../../hooks";
 
 export const Controllers = () => {
@@ -29,7 +28,7 @@ export const Controllers = () => {
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
-  }, [useLocation().pathname]);
+  }, [useLocation().pathname]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div>
       <div className={"controllers_menu"}>

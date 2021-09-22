@@ -1,3 +1,3 @@
 export const Laboratory = () => {
-  return <div>Laboratory</div>;
+  return <div className={"page__laboratory"}>Laboratory</div>;
 };

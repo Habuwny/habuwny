@@ -1,0 +1,86 @@
+@use "sass:map";
+
+//DAY
+$day-ui: (
+  primary: #0049a4,
+  secondary: #1f65d0,
+  tertiary: #3d81fb,
+  quaternary: #669bf9,
+  quintuple: #8fb4f6,
+  sixfold: #e0e6f1,
+  sevenfold: #ffca0a,
+  eightfold: #efb034,
+  ninefold: #037c6e,
+);
+$day-bg: (
+  primary: #0478ae,
+  secondary: #769cd5,
+);
+$day-text: (
+  primary: #ECEFF6,
+  secondary: #ffb703,
+  tertiary: #8dc743,
+);
+//DEFAULT
+$default-ui: (
+        primary: #833a94,
+        secondary: #9e6daf,
+        tertiary: #BD7DC6,
+        quaternary: #CD85D2,
+        quintuple: #E5A4ED,
+        sixfold: #EDBAFC,
+        sevenfold: #A3CBFF,
+        eightfold: #B3D4FF,
+        ninefold: #242c65,
+);
+$default-bg: (
+        primary: #000c1a,
+        secondary: #061220,
+);
+$default-text: (
+        primary: #ECEFF6,
+        secondary: #851380,
+        tertiary: #df1fd6,
+);
+//HEART
+$heart-ui: (
+        primary: #891249,
+        secondary: #9E1555,
+        tertiary: #CB1A6D,
+        quaternary: #EA61A1,
+        quintuple: #ED78AF,
+        sixfold: #8A1287,
+        sevenfold: #62079F,
+        eightfold: #B552F7,
+        ninefold: #ff99aa,
+);
+$heart-bg: (
+        primary: #AC394D,
+        secondary: #3D141B,
+);
+$heart-text: (
+        primary: #ECEFF6,
+        secondary: #60d7cf,
+        tertiary: #1F7C76,
+);
+//NIGHT
+$night-ui: (
+        primary: #068d80,
+        secondary: #07A797,
+        tertiary: #08C0AD,
+        quaternary: #0AF1DA,
+        quintuple: #38F7E4,
+        sixfold: #9CFBF1,
+        sevenfold: #9096AD,
+        eightfold: #606782,
+        ninefold: #40568c,
+);
+$night-bg: (
+        primary: #06171d,
+        secondary: #283d57,
+);
+$night-text: (
+        primary: #ECEFF6,
+        secondary: #045B53,
+        tertiary: #066C8C,
+);

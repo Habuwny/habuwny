@@ -18,7 +18,7 @@ export const HomeThemes = () => {
       if (width === 800) {
         gsap.to(".heartSizeThemes", { y: "+=120" });
       } else if (width < 800) {
-        // gsap.to(".heartSizeThemes", { y: 0 });
+        gsap.to(".heartSizeThemes", { y: 0 });
       }
       setWidth(window.innerWidth);
       setHeight(window.innerHeight);

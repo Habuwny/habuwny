@@ -44,13 +44,10 @@ export const Sides = () => {
       createTimeLine(tl, "portfolio_side");
     }
     if (loc !== "/") {
-      // console.log(tl, "no /");
       tl?.pause();
     } else if (loc === "/") {
-      // console.log(tl, "/");
       tl?.resume();
     }
-    // console.log(loc, "sides");
     if (theme === "day_full" || theme === "day_resize") {
       setColor("#0049a4");
     } else if (theme === "heart_full" || theme === "heart_resize") {
@@ -60,7 +57,7 @@ export const Sides = () => {
     } else {
       setColor("#b219ab");
     }
-  }, [theme, useLocation().pathname]);
+  }, [theme, useLocation().pathname]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <svg
       className={"controllers_sides controllers_sides-parts"}
