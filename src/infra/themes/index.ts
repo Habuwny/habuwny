@@ -1,14 +1,15 @@
-import { useTypedSelector } from "../../hooks";
-
 import { dayColors } from "./day/colors";
 import { nightColors } from "./night/colors";
 import { heartColors } from "./heart/colors";
 import { defaultColors } from "./default/colors";
-import { ColorTheme } from "./colorTheme";
+import { ColorCommonTheme, ColorTheme } from "./colorTheme";
+import { commonColors } from "./common/colors";
 
-export const themColor = (theme: string): ColorTheme => {
+export const themColor = (theme: string, common?: boolean): any => {
   let colors;
-  if (
+  if (common) {
+    colors = commonColors;
+  } else if (
     theme === "default_full" ||
     theme === "default_resize" ||
     theme === "default"

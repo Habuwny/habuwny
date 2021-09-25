@@ -1,0 +1,62 @@
+.laboratoryCell {
+  height: 100%;
+  border-radius: 20px;
+  background-color: #1f7c76;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  text-align: center;
+  &__hed {
+    background-color: #0af1da;
+    margin-top: 20px;
+    height: 90%;
+    width: 110%;
+    margin-left: -5%;
+    position: relative;
+    &__c {
+      width: 10%;
+      height: 60%;
+      position: absolute;
+      bottom: -
+      right: 0;
+      background-color: red;
+    }
+    //&__tran {
+    //  position: relative;
+    //
+    //  width: 100%;
+    //  background-color: #3d141b;
+    //  &-stand {
+    //    position: absolute;
+    //    height: 100%;
+    //    width: 100%;
+    //    background-color: #3d141b;
+    //  }
+    //  &-base {
+    //    position: absolute;
+    //    height: 100%;
+    //    width: 100%;
+    //    background-color: #3d141b;
+    //  }
+    //  &-angle {
+    //    position: absolute;
+    //    height: 20px;
+    //    transform: translateX(0px) skewX(-45deg);
+    //    width: 2px;
+    //    background-color: #3d141b;
+    //  }
+    //
+    //  //height: 40%;
+    //  //width: 5%;
+    //  //bottom: 0;
+    //  //right: 0;
+    //}
+  }
+  &__body {
+    background-color: #1f7c76;
+  }
+  &__bottom {
+    background-color: #1f65d0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}

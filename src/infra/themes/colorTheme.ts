@@ -17,3 +17,24 @@ export interface ColorTheme {
     tertiary: string;
   };
 }
+export interface ColorCommonTheme {
+  ui: {
+    black: string;
+    white: string;
+    disabled: string;
+    error: string;
+    success: string;
+  };
+  text: {
+    primary: string;
+    secondary: string;
+    tertiary: string;
+    quaternary: string;
+    quintuple: string;
+    sixfold: string;
+    disabled: string;
+    inverse: string;
+    error: string;
+    success: string;
+  };
+}

@@ -4,5 +4,14 @@
     background-color: #061220;
     text-align: center;
     margin-top: 100px;
+    align-items: center;
+    @include respond(tab-port) {
+      width: 90%;
+    }
+    @include respond(phone) {
+      width: 95%;
+    }
+
   }
+
 }

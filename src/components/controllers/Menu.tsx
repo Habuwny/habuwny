@@ -55,7 +55,8 @@ export const Menu = () => {
     resetMenuLinks();
   };
   const onMouseOver = (e: any) => {
-    resetMenuLinks();
+    console.log(e.target.parentElement, "sad");
+
     const tags = e.target.parentElement.children;
     if (e.target.parentElement!?.classList[0] === id || tags.length !== 3)
       return;
@@ -63,6 +64,7 @@ export const Menu = () => {
       e.target.parentElement!?.classList[0] === "menu-links-over" &&
       tags.length === 3
     ) {
+      resetMenuLinks();
       setId(e.target.parentElement!?.classList[0]);
       gsap.to(tags[0], {
         height: "100%",
@@ -139,7 +141,6 @@ export const Menu = () => {
     <div className={"navMenu"}>
       <div className={"navMenu__Links"}>
         <div style={{ marginBottom: "100px" }}>
-          {" "}
           <Logo width={width / 10} height={width / 10} />
         </div>
         <Link
@@ -161,7 +162,6 @@ export const Menu = () => {
           >
             {""}
           </div>
-
           <div className={"navMenu__Links-link-text"}>About</div>
         </Link>
         <Link
