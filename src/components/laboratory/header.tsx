@@ -16,7 +16,6 @@ export const LaboratoryHeader = () => {
         The laboratory includes some coding in Front-end and Back-end, it also
         includes my favorites coding tools.{" "}
       </p>
-      {/*<p className={"laboratoryHeader__p paragraph-primary"}></p>*/}
     </div>
   );
 };

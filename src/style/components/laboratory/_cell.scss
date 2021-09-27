@@ -1,62 +1,78 @@
 .laboratoryCell {
   height: 100%;
+  cursor: pointer;
   border-radius: 20px;
   background-color: #1f7c76;
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-rows: 0.8fr 2.4fr 0.8fr;
   text-align: center;
+  //justify-content: center;
   &__hed {
-    background-color: #0af1da;
-    margin-top: 20px;
-    height: 90%;
-    width: 110%;
-    margin-left: -5%;
-    position: relative;
-    &__c {
-      width: 10%;
-      height: 60%;
-      position: absolute;
-      bottom: -
-      right: 0;
-      background-color: red;
-    }
-    //&__tran {
-    //  position: relative;
-    //
-    //  width: 100%;
-    //  background-color: #3d141b;
-    //  &-stand {
-    //    position: absolute;
-    //    height: 100%;
-    //    width: 100%;
-    //    background-color: #3d141b;
-    //  }
-    //  &-base {
-    //    position: absolute;
-    //    height: 100%;
-    //    width: 100%;
-    //    background-color: #3d141b;
-    //  }
-    //  &-angle {
-    //    position: absolute;
-    //    height: 20px;
-    //    transform: translateX(0px) skewX(-45deg);
-    //    width: 2px;
-    //    background-color: #3d141b;
-    //  }
-    //
-    //  //height: 40%;
-    //  //width: 5%;
-    //  //bottom: 0;
-    //  //right: 0;
-    //}
+    justify-content: center;
+    background-color: #FFCD66;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    font-size: map_get($paragraph, "primary");
+    font-family: "Cairo Bold", sans-serif;
+    letter-spacing: map_get($spacing, "small");
   }
   &__body {
     background-color: #1f7c76;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &-title {
+      font-size: map_get($paragraph, "primary");
+      font-family: "Cairo Bold", sans-serif;
+      letter-spacing: map_get($spacing, "small");
+      line-height: 2.5rem;
+    }
+    &__tool {
+      padding: 0 7px;
+      border-radius: 4px;
+    }
+    &__tools {
+      font-size: map_get($paragraph, "tertiary");
+      font-family: "Cairo Bold", sans-serif;
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      align-content: space-between;
+      &-1 {
+        background-color: #1f65d0;
+      }
+      &-2 {
+        background-color: #764ABC;
+      }
+      &-3 {
+        background-color: #27609e;
+      }
+      &-4 {
+        background-color: #5299C8;
+      }
+    }
   }
   &__bottom {
     background-color: #1f65d0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    font-size: map_get($paragraph, "primary");
+    font-family: "Cairo Bold", sans-serif;
+    letter-spacing: map_get($spacing, "small");
   }
+}
+#ReactLogo{
+  margin-right: 5px;
+  visibility: visible;
+  animation: reactLogoAnime 15s linear infinite;
 }

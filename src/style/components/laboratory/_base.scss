@@ -1,13 +1,16 @@
 .laboratoryComponents{
   &__container{
     width: 70%;
-    background-color: #061220;
+    //background-color: #061220;
     text-align: center;
     margin-top: 100px;
     align-items: center;
-    @include respond(tab-port) {
+    @media (max-width:62.5em ) {
       width: 90%;
     }
+    //@include respond(tab-port) {
+    //  width: 90%;
+    //}
     @include respond(phone) {
       width: 95%;
     }
