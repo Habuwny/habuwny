@@ -1,3 +1,5 @@
+import { randomId } from "../../tools";
+
 interface ButtonProps {
   name: string;
   type: string;
@@ -5,6 +7,11 @@ interface ButtonProps {
 
 export const RoundedButton = ({ name, type }: ButtonProps) => {
   return (
-    <button className={`roundedButton roundedButton__${type}`}>{name}</button>
+    <button
+      id={`${randomId()}`}
+      className={`roundedButton roundedButton__${type}`}
+    >
+      {name}
+    </button>
   );
 };

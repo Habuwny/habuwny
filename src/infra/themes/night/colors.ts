@@ -10,10 +10,10 @@ export const nightColors = {
     eightfold: "#606782",
     ninefold: "#40568c",
   },
-  bg: {
-    primary: "#06171d",
-    secondary: "#283d57",
-  },
+  // bg: {
+  //   primary: "#06171d",
+  //   secondary: "#283d57",
+  // },
   text: {
     primary: "#ECEFF6",
     secondary: "#045B53",

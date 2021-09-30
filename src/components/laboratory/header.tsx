@@ -1,14 +1,12 @@
 import { useTypedSelector } from "../../hooks";
-import { themColor } from "../../infra/themes";
 import { useEffect } from "react";
 import { laboratoryHeaderSetts } from "../../helpers/components/laboratory/header-setts";
 
 export const LaboratoryHeader = () => {
   const theme = useTypedSelector((state) => state.theme.currentTheme);
-  const colors = themColor(theme, true);
   useEffect(() => {
-    laboratoryHeaderSetts(colors);
-  }, []);
+    laboratoryHeaderSetts(theme.split("_")[0]);
+  }, []); //eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className={"laboratoryHeader"}>
       <h2 className={"heading-primary"}>laboratory</h2>

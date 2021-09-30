@@ -1,7 +1,7 @@
 import gsap from "gsap";
-import { ColorCommonTheme } from "../../../infra/themes/colorTheme";
+import { themeColors } from "../../../infra/themes";
 
-export const laboratoryHeaderSetts = (theme: ColorCommonTheme) => {
-  gsap.set(".heading-primary", { color: theme.text.quintuple });
-  gsap.set(".laboratoryHeader__p", { color: theme.text.tertiary });
+export const laboratoryHeaderSetts = (theme: any) => {
+  gsap.set(".heading-primary", { color: themeColors.common.text.quintuple });
+  gsap.set(".laboratoryHeader__p", { color: themeColors.common.text.tertiary });
 };

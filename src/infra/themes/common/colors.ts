@@ -6,6 +6,10 @@ export const commonColors = {
     error: "#D0421B",
     success: "#138000",
   },
+  bg: {
+    primary: "#000c1a",
+    secondary: "#061220",
+  },
   text: {
     primary: "#000",
     secondary: "#333",

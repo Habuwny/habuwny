@@ -1,6 +1,6 @@
 import gsap from "gsap";
 
-export const rgbToArr = (tags: string[]) => {
+export const rgbToArr = (tags: any[]) => {
   let arrays: any[] = [];
   tags.forEach((tag) => {
     let tag1RgbValues: any = [];

@@ -10,10 +10,6 @@ export const defaultColors = {
     eightfold: "#B3D4FF",
     ninefold: "#242c65",
   },
-  bg: {
-    primary: "#000c1a",
-    secondary: "#061220",
-  },
   text: {
     primary: "#ECEFF6",
     secondary: "#851380",

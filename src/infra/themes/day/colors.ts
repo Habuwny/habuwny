@@ -10,10 +10,10 @@ export const dayColors = {
     eightfold: "#efb034",
     ninefold: "#037c6e",
   },
-  bg: {
-    primary: "#0478ae",
-    secondary: "#769cd5",
-  },
+  // bg: {
+  //   primary: "#0478ae",
+  //   secondary: "#769cd5",
+  // },
   text: {
     primary: "#ECEFF6",
     secondary: "#ffb703",

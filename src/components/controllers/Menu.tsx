@@ -55,8 +55,6 @@ export const Menu = () => {
     resetMenuLinks();
   };
   const onMouseOver = (e: any) => {
-    console.log(e.target.parentElement, "sad");
-
     const tags = e.target.parentElement.children;
     if (e.target.parentElement!?.classList[0] === id || tags.length !== 3)
       return;

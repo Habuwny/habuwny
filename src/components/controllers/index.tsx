@@ -13,7 +13,6 @@ export const Controllers = () => {
   let loc = useLocation().pathname;
 
   useEffect(() => {
-    console.log(tls, "tls");
     if (loc === "/") {
       if (tls.portfolio_side?.tl.paused()) {
         gsap.set(".controllers_sides-parts", { scale: 1 });

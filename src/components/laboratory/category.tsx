@@ -1,101 +1,102 @@
-import { RoundedButton } from "../common/rounded-button";
+import gsap from "gsap";
 import { useTypedSelector } from "../../hooks";
-import { themColor } from "../../infra/themes";
+import { LaboratoryBTN } from "./laboratoryBTN";
+import { CategoryBtnList } from "./categoryBtnList";
+import { RGB, RGBA } from "../../tools/rgbToRgba";
 import { useEffect } from "react";
-import { laboratoryCatagorySetts } from "../../helpers/components/laboratory/catagory-setts";
-
 export const LaboratoryCategory = () => {
   const theme = useTypedSelector((state) => state.theme.currentTheme);
-  const colors = themColor(theme);
-  useEffect(() => {
-    laboratoryCatagorySetts(colors);
-  }, []);
+
+  const onMouseOver = (e: any) => {
+    const btnRGB = gsap.getProperty(e.target, "backgroundColor") as string;
+    const bg = RGBA(btnRGB, 0.6);
+    gsap.to(e.target, { backgroundColor: bg });
+
+    const list = e.target.parentElement
+      ? e.target.parentElement.children[1]
+      : "";
+    if (list) {
+      gsap
+        .timeline()
+        .to(list, {
+          duration: 0.2,
+          scaleY: 1,
+          transformOrigin: "top",
+        })
+        .to(list.children, {
+          duration: 0.1,
+          scale: 1,
+          transformOrigin: "center",
+        });
+    }
+  };
+  const onMouseLeave = (e: any) => {
+    console.log(e.target);
+    // if (e.target == "") {
+    // }
+    // const btnRGB = gsap.getProperty(e.target, "backgroundColor") as string;
+    // const bg = RGB(btnRGB);
+    // gsap.to(e.target, { backgroundColor: bg });
+    // const list = e.target.parentElement
+    //   ? e.target.parentElement.children[1]
+    //   : "";
+    //
+    // if (list) {
+    //   gsap
+    //     .timeline()
+    //     .to(list.children, {
+    //       duration: 0.1,
+    //       scale: 0,
+    //       transformOrigin: "center",
+    //     })
+    //     .to(list, {
+    //       duration: 0.2,
+    //       scaleY: 0,
+    //       transformOrigin: "top",
+    //     });
+    // }
+  };
   return (
     <div className={"laboratoryCategory"}>
-      <div className={"laboratoryCategory-buttons"}>
-        <span>
-          <RoundedButton name={"Show All"} type={"small"} />
-        </span>
-        <span className={"laboratoryCategory-buttons__front-end"}>
-          <RoundedButton name={"Front-End"} type={"small"} />
-          <div className={"laboratoryCategory-buttons__front-end-list"}>
-            <span
-              className={
-                "laboratoryCategory-buttons__front-end__list-javascript"
-              }
-            >
-              javascript
-            </span>
-            <span
-              className={"laboratoryCategory-buttons__front-end__list-react"}
-            >
-              React
-            </span>
-            <span
-              className={"laboratoryCategory-buttons__front-end__list-react"}
-            >
-              Html
-            </span>
-            <span
-              className={"laboratoryCategory-buttons__front-end__list-react"}
-            >
-              Css/Scss
-            </span>
-          </div>
-        </span>
-        <span className={"laboratoryCategory-buttons__back-end"}>
-          <RoundedButton name={"Back-End"} type={"small"} />
-          <div className={"laboratoryCategory-buttons__back-end-list"}>
-            <span
-              className={"laboratoryCategory-buttons__back-end__list-nodeJS"}
-            >
-              NodeJS
-            </span>
-            <span className={"laboratoryCategory-buttons__back-end__list-php"}>
-              Php
-            </span>
-            <span
-              className={"laboratoryCategory-buttons__back-end__list-python"}
-            >
-              Python
-            </span>
-            <span
-              className={"laboratoryCategory-buttons__back-end__list-mongoDB"}
-            >
-              MongoDB
-            </span>
-            <span className={"laboratoryCategory-buttons__back-end__list-SQL"}>
-              SQL
-            </span>
-            <span
-              className={
-                "laboratoryCategory-buttons__back-end__list-Postgresql"
-              }
-            >
-              PostgreSQL
-            </span>
-          </div>
-        </span>
-        <span className={"laboratoryCategory-buttons__tools"}>
-          <RoundedButton name={"Tools"} type={"small"} />
-          <div className={"laboratoryCategory-buttons__tools-list"}>
-            <span className={"laboratoryCategory-buttons__tools-list-github"}>
-              Github
-            </span>
-            <span className={"laboratoryCategory-buttons__tools-list-webstorm"}>
-              Webstorm
-            </span>
-            <span className={"laboratoryCategory-buttons__tools-list-vscode"}>
-              VSCode
-            </span>
-            <span className={"laboratoryCategory-buttons__tools-list-pyCharm"}>
-              PyCharm
-            </span>
-          </div>
-        </span>
-        <span>
-          <RoundedButton name={"Others"} type={"small"} />
-        </span>
+      <div className={"laboratoryCategory__showAll"}>
+        <LaboratoryBTN
+          name={"show All"}
+          onMouseOver={onMouseOver}
+          onMouseLeave={onMouseLeave}
+        />
+      </div>
+      <div className={"laboratoryCategory__front-end"}>
+        <LaboratoryBTN
+          name={"Front-End"}
+          onMouseOver={onMouseOver}
+          onMouseLeave={onMouseLeave}
+        />
+        <CategoryBtnList list={["Javascript", "React", "Html", "Css/Scss"]} />
+      </div>
+      <div className={"laboratoryCategory__back-end"}>
+        <LaboratoryBTN
+          name={"Back-End"}
+          onMouseOver={onMouseOver}
+          onMouseLeave={onMouseLeave}
+        />
+        <CategoryBtnList
+          list={["NodeJS", "Php", "Python", "MongoDB", "SQL", "PostgreSQL"]}
+        />
+      </div>
+      <div className={"laboratoryCategory__tools"}>
+        <LaboratoryBTN
+          name={"Tools"}
+          onMouseOver={onMouseOver}
+          onMouseLeave={onMouseLeave}
+        />
+        <CategoryBtnList list={["Github", "Webstorm", "VSCode", "PyCharm"]} />
+      </div>
+      <div className={"laboratoryCategory__others"}>
+        <LaboratoryBTN
+          name={"Others"}
+          onMouseOver={onMouseOver}
+          onMouseLeave={onMouseLeave}
+        />
       </div>
     </div>
   );

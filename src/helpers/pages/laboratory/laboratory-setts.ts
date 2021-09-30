@@ -1,6 +1,8 @@
 import gsap from "gsap";
-import { ColorTheme } from "../../../infra/themes/colorTheme";
-
-export const laboratorySetts = (theme: ColorTheme) => {
-  gsap.set(".page__laboratory", { backgroundColor: theme.bg.primary });
+import { themeColors } from "../../../infra/themes";
+import { ThemeColorType } from "../../../infra/themes/colorTheme";
+export const laboratorySetts = (theme: ThemeColorType) => {
+  gsap.set(".page__laboratory", {
+    backgroundColor: themeColors.common.bg.primary,
+  });
 };

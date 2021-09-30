@@ -10,10 +10,10 @@ export const heartColors = {
     eightfold: "#B552F7",
     ninefold: "#ff99aa",
   },
-  bg: {
-    primary: "#AC394D",
-    secondary: "#3D141B",
-  },
+  // bg: {
+  //   primary: "#AC394D",
+  //   secondary: "#3D141B",
+  // },
   text: {
     primary: "#ECEFF6",
     secondary: "#60d7cf",
