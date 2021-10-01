@@ -1,6 +1,4 @@
-import { ThemeColorType } from "./colorTheme";
-
-export const themeColors: ThemeColorType = {
+export const themeColors: any = {
   default: {
     ui: {
       primary: "#833a94",
@@ -12,6 +10,13 @@ export const themeColors: ThemeColorType = {
       sevenfold: "#A3CBFF",
       eightfold: "#B3D4FF",
       ninefold: "#242c65",
+      laboratory: {
+        cell: {
+          body: "#7400b8",
+          frontEndHead: "#ffba08",
+          backEndHead: "#cc0044",
+        },
+      },
     },
     text: {
       primary: "#ECEFF6",
@@ -48,6 +53,7 @@ export const themeColors: ThemeColorType = {
       sevenfold: "#62079F",
       eightfold: "#B552F7",
       ninefold: "#ff99aa",
+      frontEnd: "#f77f00",
     },
 
     text: {

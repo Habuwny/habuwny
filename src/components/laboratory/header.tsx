@@ -3,9 +3,11 @@ import { useEffect } from "react";
 import { laboratoryHeaderSetts } from "../../helpers/components/laboratory/header-setts";
 
 export const LaboratoryHeader = () => {
-  const theme = useTypedSelector((state) => state.theme.currentTheme);
+  const theme = useTypedSelector((state) => state.theme.currentTheme).split(
+    "_"
+  )[0];
   useEffect(() => {
-    laboratoryHeaderSetts(theme.split("_")[0]);
+    laboratoryHeaderSetts(theme);
   }, []); //eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className={"laboratoryHeader"}>

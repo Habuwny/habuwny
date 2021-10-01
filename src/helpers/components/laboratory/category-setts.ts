@@ -1,10 +1,14 @@
 import gsap from "gsap";
 import { themeColors } from "../../../infra/themes";
-import { ThemeTypes } from "../../../infra/themes/themesTypes";
-export const laboratoryCategorySetts = (theme: ThemeTypes) => {
-  gsap.set(".roundedButton__small", {
-    // @ts-ignore
+export const laboratoryCategorySetts = (theme: string) => {
+  gsap.set(".customBTN", {
     backgroundColor: themeColors[theme].ui.primary,
     color: themeColors[theme].text.primary,
+  });
+  gsap.set(".laboratoryCategory__BtnList", {
+    backgroundColor: themeColors[theme].ui.secondary,
+  });
+  gsap.set(".laboratoryCategory__BtnList-item", {
+    backgroundColor: themeColors[theme].ui.primary,
   });
 };

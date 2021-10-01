@@ -41,7 +41,7 @@ export const Button = ({
         padding: padding,
       }}
     >
-      {children}
+      <span> {children}</span>
     </button>
   );
 };
