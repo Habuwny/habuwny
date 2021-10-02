@@ -1,4 +1,4 @@
-import { randomId } from "../../tools";
+import { headName, randomId } from "../../tools";
 import gsap from "gsap";
 import { RGB, RGBA } from "../../tools/rgbToRgba";
 
@@ -27,6 +27,10 @@ export const CategoryBtnList = ({
     const color = RGB(btnColor);
     gsap.set(e.target, { backgroundColor, color });
   };
+  const onSpanClick = (e: any) => {
+    const sub = headName(e.target.classList[0]);
+    console.log(sub);
+  };
   return (
     <div
       key={randomId()}
@@ -39,8 +43,9 @@ export const CategoryBtnList = ({
           <span
             onMouseOver={onSpanOver}
             onMouseLeave={onSpanLeave}
+            onClick={onSpanClick}
             key={`laboratoryCategory__BtnList-${item}`}
-            className={`laboratoryCategory__BtnList-item laboratoryCategory__BtnList-${item}`}
+            className={`laboratoryCategory__BtnList-${item} laboratoryCategory__BtnList-item`}
           >
             {item}
           </span>

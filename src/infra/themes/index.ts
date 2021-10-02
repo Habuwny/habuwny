@@ -12,9 +12,15 @@ export const themeColors: any = {
       ninefold: "#242c65",
       laboratory: {
         cell: {
-          body: "#7400b8",
-          frontEndHead: "#ffba08",
-          backEndHead: "#cc0044",
+          frontEnd: {
+            // head: "#ffba08",
+            head: "#FF8F08",
+            body: "#7400b8",
+            js: "#323330",
+            react: "#1f65d0",
+            css: "#E67800",
+            html: "#013350",
+          },
         },
       },
     },

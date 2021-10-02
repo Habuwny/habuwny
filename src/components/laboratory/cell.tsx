@@ -1,10 +1,8 @@
-import { ReactLogo } from "../../assets/react-logo";
 import * as React from "react";
 import { useEffect } from "react";
-import { laboratoryCellSetts } from "../../helpers/components/laboratory/cell-setts";
+import { laboratoryCellSetts } from "../../helpers";
 import { useTypedSelector } from "../../hooks";
-import { CellBottomLogo } from "../../helpers/components/laboratory/cellBottomLogo";
-import gsap from "gsap";
+import { CellBottomLogo } from "../../helpers";
 
 interface LaboratoryCellInterface {
   hed: string;
@@ -18,20 +16,12 @@ export const LaboratoryCell = ({
   bottom,
   list,
 }: LaboratoryCellInterface) => {
-  const theme = useTypedSelector((state) => state.theme.currentTheme).split(
-    "_"
-  )[0];
-
+  const theme = useTypedSelector((state) => state.theme.currentTheme);
+  const currCategory = useTypedSelector((state) => state.category);
   useEffect(() => {
-    laboratoryCellSetts(theme);
-    gsap
-      .timeline()
-      .fromTo(
-        "#JsLogo",
-        { durationL: 3, drawSVG: "0", delay: 0.5 },
-        { durationL: 3, drawSVG: "100% 100%", delay: 0.5 }
-      );
-  }, []); //eslint-disable-line react-hooks/exhaustive-deps
+    const currTheme = theme.split("_")[0];
+    laboratoryCellSetts(currTheme);
+  }, [theme, currCategory]); //eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className={"laboratoryCell"}>
       <div className={"laboratoryCell__hed"}>{hed}</div>
@@ -41,7 +31,7 @@ export const LaboratoryCell = ({
           {list.map((tool, i) => {
             return (
               <span
-                key={"laboratoryCell__body__tools-${i+1}"}
+                key={`laboratoryCell__body__tools-${i + 1}`}
                 className={`laboratoryCell__body__tool laboratoryCell__body__tools-${
                   i + 1
                 }`}
@@ -52,8 +42,7 @@ export const LaboratoryCell = ({
           })}
         </div>
       </div>
-      <div className={"laboratoryCell__bottom"}>
-        {/*<ReactLogo />*/}
+      <div className={`laboratoryCell__bottom laboratoryCell__${bottom}`}>
         <CellBottomLogo tool={bottom} />
         <span>{bottom}</span>
       </div>

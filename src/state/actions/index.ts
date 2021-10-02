@@ -1,5 +1,11 @@
 import { ActionType } from "../action-types";
-import { CurrentThemeType, MenuStateType, Theme, TimeLine } from "../theme";
+import {
+  CurrentThemeType,
+  MenuStateType,
+  Types,
+  TimeLine,
+  Category,
+} from "../types";
 
 export interface CreateTimeLineAction {
   type: ActionType.CREATE_TIMELINE;
@@ -13,8 +19,13 @@ export interface MenuStateAction {
   type: ActionType.MENU_STATE;
   payload: MenuStateType;
 }
+export interface CategoryStateAction {
+  type: ActionType.Category_STATE;
+  payload: Category;
+}
 
 export type Action =
   | CreateTimeLineAction
   | CurrentThemeAction
-  | MenuStateAction;
+  | MenuStateAction
+  | CategoryStateAction;

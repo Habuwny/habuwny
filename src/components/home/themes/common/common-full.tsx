@@ -5,9 +5,6 @@ export const CommonFull = ({ width, height }: SvgProps) => {
   return (
     <div className={"intro__common intro__commonFull"}>
       <svg
-        // className={
-        //   "intro__theme-full-common intro__commonFull-svg intro__commonFull"
-        // }
         className={"intro__commonFull"}
         x={0}
         y={0}

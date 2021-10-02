@@ -4,8 +4,8 @@ export const ReactLogo = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={30}
-      height={30}
+      width={40}
+      height={40}
       viewBox="0 0 122.88 109.43"
       id={"ReactLogo"}
     >

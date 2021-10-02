@@ -1,12 +1,12 @@
-import { Action } from '../actions';
-import { ActionType } from '../action-types';
-import { Theme } from '../theme';
+import { Action } from "../actions";
+import { ActionType } from "../action-types";
+import { Types } from "../types";
 
 interface CurrentThemeState {
-  currentTheme: Theme;
+  currentTheme: Types;
 }
 
-const initialState: CurrentThemeState = { currentTheme: 'default' };
+const initialState: CurrentThemeState = { currentTheme: "default" };
 
 const reducer = (
   state: CurrentThemeState = initialState,

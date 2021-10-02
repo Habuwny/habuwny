@@ -1,8 +1,8 @@
 import { ActionType } from "../action-types";
-import { Theme } from "../theme";
+import { CategoryHead, CategorySub, Types } from "../types";
 
 type Visibility = "visible" | "hidden";
-export const createTimeLine = (tl: any, theme: Theme) => {
+export const createTimeLine = (tl: any, theme: Types) => {
   return {
     type: ActionType.CREATE_TIMELINE,
     payload: {
@@ -11,7 +11,7 @@ export const createTimeLine = (tl: any, theme: Theme) => {
     },
   };
 };
-export const currentTheme = (currentTheme: Theme) => {
+export const currentTheme = (currentTheme: Types) => {
   return {
     type: ActionType.CURRENT_THEME,
     payload: {
@@ -24,6 +24,15 @@ export const menuState = (visibility: Visibility) => {
     type: ActionType.MENU_STATE,
     payload: {
       visibility,
+    },
+  };
+};
+export const currentCategory = (head: CategoryHead, sub: CategorySub) => {
+  return {
+    type: ActionType.Category_STATE,
+    payload: {
+      head,
+      sub,
     },
   };
 };

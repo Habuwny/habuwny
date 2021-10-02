@@ -1,6 +1,6 @@
-import { ActionType } from '../action-types';
-import { Action } from '../actions';
-import { TimeLine } from '../theme';
+import { ActionType } from "../action-types";
+import { Action } from "../actions";
+import { TimeLine } from "../types";
 
 interface TimeLineState {
   [key: string]: TimeLine;

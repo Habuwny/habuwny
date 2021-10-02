@@ -1,16 +1,20 @@
 import React, { MouseEventHandler } from "react";
+import { CategoryHead } from "../../state/types";
 interface BtnProps {
   border: string;
   color: string;
   children?: React.ReactNode;
   height?: string;
-  onClick?: () => void;
+  onClick?: MouseEventHandler;
   onMouseOver?: MouseEventHandler;
   onMouseLeave?: MouseEventHandler;
   radius: string;
   width?: string;
   padding?: string;
   classes?: string;
+  type: CategoryHead;
+  createREF: any;
+  // ref?
 }
 
 export const Button = ({
@@ -25,9 +29,15 @@ export const Button = ({
   onMouseOver,
   padding,
   classes,
+  type,
+  createREF,
 }: BtnProps) => {
+  // const createREF = () => {
+  //   createRef();
+  // };
   return (
     <button
+      ref={createREF}
       className={classes}
       onClick={onClick}
       onMouseLeave={onMouseLeave}
@@ -41,7 +51,7 @@ export const Button = ({
         padding: padding,
       }}
     >
-      <span> {children}</span>
+      <span typeof={type}> {children}</span>
     </button>
   );
 };

@@ -1,18 +1,27 @@
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useTypedSelector } from "../../hooks";
+import { useActions, useTypedSelector } from "../../hooks";
 import { LaboratoryBTN } from "./laboratoryBTN";
 import { CategoryBtnList } from "./categoryBtnList";
 import { RGBA, RGB } from "../../tools/rgbToRgba";
-import { useEffect } from "react";
-import { laboratoryCategorySetts } from "../../helpers/components/laboratory/category-setts";
+import { laboratoryCategorySetts } from "../../helpers";
 
 export const LaboratoryCategory = () => {
+  const { currentCategory } = useActions();
+  const refs = useRef();
   const theme = useTypedSelector((state) => state.theme.currentTheme).split(
     "_"
   )[0];
+
   useEffect(() => {
     laboratoryCategorySetts(theme);
   });
+  const onHeadClick = (e: any) => {
+    console.log(refs.current);
+    // console.log(e.target.__reactProps$w0t4peozvo.typeof);
+    // const head = headName(e.target.classList[0]);
+    // currentCategory(head, "all");
+  };
   const onMouseOver = (e: any) => {
     const btnRGB = gsap.getProperty(e.target, "backgroundColor") as string;
     if (e.target.classList[0] === "customBTN") {
@@ -73,22 +82,37 @@ export const LaboratoryCategory = () => {
         onMouseOver={onMouseOver}
         onMouseLeave={onMouseLeave}
       >
-        <LaboratoryBTN name={"show All"} />
+        <LaboratoryBTN
+          name={"show All"}
+          onClick={onHeadClick}
+          type={"all"}
+          createREF={refs}
+        />
       </div>
       <div
         className={"laboratoryCategory__front-end"}
         onMouseOver={onMouseOver}
         onMouseLeave={onMouseLeave}
       >
-        <LaboratoryBTN name={"Front-End"} />
-        <CategoryBtnList list={["Javascript", "React", "Html", "Css/Scss"]} />
+        <LaboratoryBTN
+          name={"Front-End"}
+          onClick={onHeadClick}
+          type={"front-end"}
+          createREF={refs}
+        />
+        <CategoryBtnList list={["Javascript", "React", "Html", "Css-Scss"]} />
       </div>
       <div
         className={"laboratoryCategory__back-end"}
         onMouseOver={onMouseOver}
         onMouseLeave={onMouseLeave}
       >
-        <LaboratoryBTN name={"Back-End"} />
+        <LaboratoryBTN
+          name={"Back-End"}
+          onClick={onHeadClick}
+          type={"back-end"}
+          createREF={refs}
+        />
         <CategoryBtnList
           list={["NodeJS", "Php", "Python", "MongoDB", "SQL", "Postgres"]}
         />
@@ -98,7 +122,12 @@ export const LaboratoryCategory = () => {
         onMouseOver={onMouseOver}
         onMouseLeave={onMouseLeave}
       >
-        <LaboratoryBTN name={"Tools"} />
+        <LaboratoryBTN
+          name={"Tools"}
+          onClick={onHeadClick}
+          type={"tools"}
+          createREF={refs}
+        />
         <CategoryBtnList list={["Github", "Webstorm", "VSCode", "PyCharm"]} />
       </div>
       <div
@@ -106,7 +135,12 @@ export const LaboratoryCategory = () => {
         onMouseOver={onMouseOver}
         onMouseLeave={onMouseLeave}
       >
-        <LaboratoryBTN name={"Others"} />
+        <LaboratoryBTN
+          name={"Others"}
+          onClick={onHeadClick}
+          type={"others"}
+          createREF={refs}
+        />
       </div>
     </div>
   );
