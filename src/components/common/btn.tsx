@@ -1,5 +1,4 @@
-import React, { MouseEventHandler } from "react";
-import { CategoryHead } from "../../state/types";
+import React, { MouseEventHandler, MutableRefObject } from "react";
 interface BtnProps {
   border: string;
   color: string;
@@ -12,9 +11,6 @@ interface BtnProps {
   width?: string;
   padding?: string;
   classes?: string;
-  type: CategoryHead;
-  createREF: any;
-  // ref?
 }
 
 export const Button = ({
@@ -29,15 +25,9 @@ export const Button = ({
   onMouseOver,
   padding,
   classes,
-  type,
-  createREF,
 }: BtnProps) => {
-  // const createREF = () => {
-  //   createRef();
-  // };
   return (
     <button
-      ref={createREF}
       className={classes}
       onClick={onClick}
       onMouseLeave={onMouseLeave}
@@ -51,7 +41,7 @@ export const Button = ({
         padding: padding,
       }}
     >
-      <span typeof={type}> {children}</span>
+      {children}
     </button>
   );
 };

@@ -1,6 +1,21 @@
 export const RGBA = (rgb: string, a: number) => {
-  return rgb.slice(0, 3) + "a" + rgb.slice(3, -1) + "," + a + ")";
+  let rgbColors = [];
+  const colors = rgb.split(",");
+  rgbColors.push(
+    colors[0].split("(")[1].trim(),
+    colors[1].trim(),
+    colors[2].replace(")", "").trim()
+  );
+  return `rgba(${rgbColors[0]}, ${rgbColors[1]}, ${rgbColors[2]},${a})`;
 };
 export const RGB = (rgba: string) => {
-  return rgba.slice(0, 3) + rgba.slice(4, -6) + ")";
+  // console.log(rgba, "RGB");
+  let rgbColors = [];
+  const colors = rgba.split(",");
+  rgbColors.push(
+    colors[0].split("(")[1].trim(),
+    colors[1].trim(),
+    colors[2].trim()
+  );
+  return `rgb(${rgbColors[0]}, ${rgbColors[1]}, ${rgbColors[2]})`;
 };
