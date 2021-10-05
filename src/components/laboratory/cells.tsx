@@ -6,9 +6,10 @@ import { locCellsData } from "../../helpers/components/laboratory";
 export const LaboratoryCells = () => {
   const currCategory = useTypedSelector((state) => state.category);
   const [currCells, setCurrCells] = useState<any>(locCellsData);
+
   useEffect(() => {
     const cells = locCellsData.filter((cell) => {
-      if (currCategory.head === "all") return locCellsData;
+      if (currCategory.head === "showAll") return locCellsData;
       return cell.type === currCategory.head;
     });
     setCurrCells(cells);

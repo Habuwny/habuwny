@@ -7,7 +7,7 @@ interface CurrentCategoryState {
   sub: CategorySub;
 }
 
-const initialState: CurrentCategoryState = { head: "all", sub: "all" };
+const initialState: CurrentCategoryState = { head: "showAll", sub: "all" };
 
 const reducer = (
   state: CurrentCategoryState = initialState,

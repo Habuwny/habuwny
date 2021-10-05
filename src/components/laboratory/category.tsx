@@ -1,20 +1,22 @@
 import { createRef, MutableRefObject, useEffect, useState } from "react";
-import { useTypedSelector } from "../../hooks";
+import { useActions, useTypedSelector } from "../../hooks";
 import { LaboratoryBTN } from "./laboratoryBTN";
 import { CategoryBtnList } from "./categoryBtnList";
 import { btnColorHover, laboratoryCategorySetts } from "../../helpers";
 import { categoryList } from "../../helpers/components/laboratory/categoryListOver";
 
 export const LaboratoryCategory = () => {
-  const [headBtnClicked, setHeadBtnClicked] = useState<boolean>(false);
-  const [outerClicked, setOuterClicked] = useState<boolean>(false);
+  const { currentCategory } = useActions();
   const [clickedTarget, setClickedTarget] = useState<Element>();
+  const [fLunch, setFLunch] = useState<boolean>(true);
+  // const [fLunchTarget, setFLunchTarget] = useState<boolean>(true);
+
   const refs = {
-    allRef: createRef() as MutableRefObject<HTMLInputElement>,
-    frontRef: createRef() as MutableRefObject<HTMLInputElement>,
-    backRef: createRef() as MutableRefObject<HTMLInputElement>,
-    toolsRef: createRef() as MutableRefObject<HTMLInputElement>,
-    othersRef: createRef() as MutableRefObject<HTMLInputElement>,
+    showAll: createRef() as MutableRefObject<HTMLInputElement>,
+    frontEnd: createRef() as MutableRefObject<HTMLInputElement>,
+    backEnd: createRef() as MutableRefObject<HTMLInputElement>,
+    tools: createRef() as MutableRefObject<HTMLInputElement>,
+    others: createRef() as MutableRefObject<HTMLInputElement>,
   };
   const theme = useTypedSelector((state) => state.theme.currentTheme).split(
     "_"
@@ -22,59 +24,65 @@ export const LaboratoryCategory = () => {
 
   useEffect(() => {
     laboratoryCategorySetts(theme);
-    document
-      .querySelector(".page__laboratory")!
-      .addEventListener("click", (e: Event) => {
-        const refsObj = Object.keys(refs);
-        // setClickedTarget(clickedTarget + 1);
-      });
-  }, []);
-  const onClick = (target: Element) => {
-    if (clickedTarget !== target) {
-      btnColorHover(target, "over");
-    } else {
-      btnColorHover(target, "leave");
+    if (fLunch) {
+      btnColorHover(refs.showAll.current, "over");
     }
-    setHeadBtnClicked(true);
+  });
+  const onClick = (target: Element) => {
+    const btnHead: any = target.id.split("-")[1];
+    if (fLunch && target === refs.showAll.current) {
+      return;
+    }
+    setFLunch(false);
+    btnColorHover(target, "over");
     setClickedTarget(target);
+    currentCategory(btnHead, "all");
   };
   const onMouseOver = (target: Element) => {
+    if (fLunch && target === refs.showAll.current) return;
     btnColorHover(target, "over");
     categoryList(target, "over");
   };
   const onMouseLeave = (target: Element) => {
-    if (headBtnClicked === false) {
-      btnColorHover(target, "leave");
+    if (fLunch && target === refs.showAll.current) return;
+
+    if (target === clickedTarget) {
+      return categoryList(target, "leave");
     }
+    btnColorHover(target, "leave");
     categoryList(target, "leave");
   };
 
   return (
     <div className={"laboratoryCategory"}>
       <div
-        ref={refs.allRef}
+        id={"cat-showAll"}
         className={"laboratoryCategory__showAll"}
-        onClick={() => onClick(refs.allRef.current)}
-        onMouseOver={() => onMouseOver(refs.allRef.current)}
-        onMouseLeave={() => onMouseLeave(refs.allRef.current)}
+        ref={refs.showAll}
+        onClick={() => onClick(refs.showAll.current)}
+        onMouseOver={() => onMouseOver(refs.showAll.current)}
+        onMouseLeave={() => onMouseLeave(refs.showAll.current)}
       >
         <LaboratoryBTN name={"show All"} />
       </div>
       <div
+        id={"cat-frontEnd"}
         className={"laboratoryCategory__front-end"}
-        ref={refs.frontRef}
-        onClick={() => onClick(refs.frontRef.current)}
-        onMouseOver={() => onMouseOver(refs.frontRef.current)}
-        onMouseLeave={() => onMouseLeave(refs.frontRef.current)}
+        ref={refs.frontEnd}
+        onClick={() => onClick(refs.frontEnd.current)}
+        onMouseOver={() => onMouseOver(refs.frontEnd.current)}
+        onMouseLeave={() => onMouseLeave(refs.frontEnd.current)}
       >
         <LaboratoryBTN name={"Front-End"} />
         <CategoryBtnList list={["Javascript", "React", "Html", "Css-Scss"]} />
       </div>
       <div
+        id={"cat-backEnd"}
         className={"laboratoryCategory__back-end"}
-        ref={refs.backRef}
-        onMouseOver={() => onMouseOver(refs.backRef.current)}
-        onMouseLeave={() => onMouseLeave(refs.backRef.current)}
+        ref={refs.backEnd}
+        onClick={() => onClick(refs.backEnd.current)}
+        onMouseOver={() => onMouseOver(refs.backEnd.current)}
+        onMouseLeave={() => onMouseLeave(refs.backEnd.current)}
       >
         <LaboratoryBTN name={"Back-End"} />
         <CategoryBtnList
@@ -82,19 +90,23 @@ export const LaboratoryCategory = () => {
         />
       </div>
       <div
+        id={"cat-tools"}
         className={"laboratoryCategory__tools"}
-        ref={refs.toolsRef}
-        onMouseOver={() => onMouseOver(refs.toolsRef.current)}
-        onMouseLeave={() => onMouseLeave(refs.toolsRef.current)}
+        ref={refs.tools}
+        onClick={() => onClick(refs.tools.current)}
+        onMouseOver={() => onMouseOver(refs.tools.current)}
+        onMouseLeave={() => onMouseLeave(refs.tools.current)}
       >
         <LaboratoryBTN name={"Tools"} />
         <CategoryBtnList list={["Github", "Webstorm", "VSCode", "PyCharm"]} />
       </div>
       <div
+        id={"cat-others"}
         className={"laboratoryCategory__others"}
-        ref={refs.othersRef}
-        onMouseOver={() => onMouseOver(refs.othersRef.current)}
-        onMouseLeave={() => onMouseLeave(refs.othersRef.current)}
+        ref={refs.others}
+        onClick={() => onClick(refs.others.current)}
+        onMouseOver={() => onMouseOver(refs.others.current)}
+        onMouseLeave={() => onMouseLeave(refs.others.current)}
       >
         <LaboratoryBTN name={"Others"} />
       </div>

@@ -12,9 +12,9 @@ export type Types =
   | "logo"
   | "portfolio_side";
 export type CategoryHead =
-  | "all"
-  | "front-end"
-  | "back-end"
+  | "showAll"
+  | "frontEnd"
+  | "backEnd"
   | "tools"
   | "others";
 export type AllCategorySub = "all";
