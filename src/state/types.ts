@@ -18,7 +18,7 @@ export type CategoryHead =
   | "tools"
   | "others";
 export type AllCategorySub = "all";
-export type FrontCategorySub = "js" | "react" | "html" | "css";
+export type FrontCategorySub = "javascript" | "react" | "html" | "css";
 export type BackCategorySub =
   | "nodeJs"
   | "php"

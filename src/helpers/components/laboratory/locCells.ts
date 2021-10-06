@@ -1,7 +1,8 @@
 export const locCellsData = [
   {
     type: "frontEnd",
-    sub: "js",
+    tape: "article",
+    sub: "javascript",
     hed: "Front-End",
     body: "using react with typescript and webpack",
     bottom: "Javascript",
@@ -9,6 +10,7 @@ export const locCellsData = [
   },
   {
     type: "backEnd",
+    tape: "code",
     sub: "nodejs",
     hed: "Back-End",
     body: "start server locally",
@@ -17,6 +19,7 @@ export const locCellsData = [
   },
   {
     type: "frontEnd",
+    tape: "article",
     sub: "react",
     hed: "Front-End",
     body: "using react with typescript and webpack",
@@ -25,6 +28,7 @@ export const locCellsData = [
   },
   {
     type: "tools",
+    tape: "article",
     sub: "webstorm",
     hed: "Tools",
     body: "prettier on save",
@@ -33,6 +37,7 @@ export const locCellsData = [
   },
   {
     type: "tools",
+    tape: "article",
     sub: "github",
     hed: "Tools",
     body: "easy commit and push to github using commandline",
@@ -41,6 +46,7 @@ export const locCellsData = [
   },
   {
     type: "frontEnd",
+    tape: "article",
     sub: "html",
     hed: "Front-End",
     body: "html with js and css",
@@ -49,6 +55,7 @@ export const locCellsData = [
   },
   {
     type: "frontEnd",
+    tape: "article",
     sub: "css",
     hed: "Front-End",
     body: "ways to convert scss to css",
@@ -57,7 +64,9 @@ export const locCellsData = [
   },
   {
     type: "others",
+    tape: "code",
     sub: "gsap",
+
     hed: "Others",
     body: "use gsap and make animation much better",
     bottom: "Gsap",
@@ -65,6 +74,7 @@ export const locCellsData = [
   },
   {
     type: "backEnd",
+    tape: "code",
     sub: "mongoDB",
     hed: "Back-End",
     body: "mongoDB bases info to use it",
@@ -73,6 +83,7 @@ export const locCellsData = [
   },
   {
     type: "backEnd",
+    tape: "code",
     sub: "mongoDB",
     hed: "Back-End",
     body: "mongoDB with nodeJs, react and typescript",

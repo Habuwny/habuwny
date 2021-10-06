@@ -10,7 +10,12 @@ export const LaboratoryCells = () => {
   useEffect(() => {
     const cells = locCellsData.filter((cell) => {
       if (currCategory.head === "showAll") return locCellsData;
-      return cell.type === currCategory.head;
+      else if (currCategory.sub === "all") {
+        console.log(currCategory.head, currCategory.sub);
+        return cell.type === currCategory.head;
+      }
+      console.log(currCategory.head, currCategory.sub);
+      return cell.type === currCategory.head && cell.sub === currCategory.sub;
     });
     setCurrCells(cells);
   }, [currCategory]);
@@ -18,12 +23,14 @@ export const LaboratoryCells = () => {
     <div className={"laboratoryCells"}>
       {currCells.map((cell: any) => {
         return (
-          <LaboratoryCell
-            hed={cell.hed}
-            body={cell.body}
-            bottom={cell.bottom}
-            list={cell.list}
-          />
+          <div className={"laboratoryCell__container"}>
+            <LaboratoryCell
+              hed={cell.hed}
+              body={cell.body}
+              bottom={cell.bottom}
+              list={cell.list}
+            />
+          </div>
         );
       })}
     </div>

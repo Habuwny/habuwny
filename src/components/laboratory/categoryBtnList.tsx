@@ -1,16 +1,19 @@
-import { headName, randomId } from "../../tools";
+import { randomId } from "../../tools";
 import gsap from "gsap";
 import { RGB, RGBA } from "../../tools/rgbToRgba";
+import { MouseEventHandler } from "react";
 
 interface ListProps {
   onMouseOver?: () => void;
   onMouseLeave?: () => void;
+  onSpanClick?: MouseEventHandler;
   list: string[];
 }
 
 export const CategoryBtnList = ({
   onMouseOver,
   onMouseLeave,
+  onSpanClick,
   list,
 }: ListProps) => {
   const onSpanOver = (e: any) => {
@@ -27,10 +30,6 @@ export const CategoryBtnList = ({
     const color = RGB(btnColor);
     gsap.set(e.target, { backgroundColor, color });
   };
-  const onSpanClick = (e: any) => {
-    const sub = headName(e.target.classList[0]);
-    console.log(sub);
-  };
   return (
     <div
       key={randomId()}
@@ -41,6 +40,7 @@ export const CategoryBtnList = ({
       {list.map((item) => {
         return (
           <span
+            id={`cat-${item}`}
             onMouseOver={onSpanOver}
             onMouseLeave={onSpanLeave}
             onClick={onSpanClick}
