@@ -15,8 +15,27 @@ export const locCellsData = [
     hed: "Back-End",
     body: "start server locally",
     bottom: "NodeJs",
-    list: ["nodeJS", "js", "html", "css"],
+    list: ["nodeJS", "javascript", "html", "css"],
   },
+  {
+    type: "backEnd",
+    tape: "code",
+    sub: "php",
+    hed: "Back-End",
+    body: "start server locally",
+    bottom: "Php",
+    list: ["php", "javascript", "html", "css", "scss"],
+  },
+  {
+    type: "backEnd",
+    tape: "code",
+    sub: "python",
+    hed: "Back-End",
+    body: "start server locally",
+    bottom: "Python",
+    list: ["python", "javascript", "html", "css", "scss"],
+  },
+
   {
     type: "frontEnd",
     tape: "article",
@@ -33,7 +52,7 @@ export const locCellsData = [
     hed: "Tools",
     body: "prettier on save",
     bottom: "Webstorm",
-    list: ["webstorm", "js"],
+    list: ["webstorm", "javascript"],
   },
   {
     type: "tools",
@@ -79,7 +98,7 @@ export const locCellsData = [
     hed: "Back-End",
     body: "mongoDB bases info to use it",
     bottom: "MongoDB",
-    list: ["nodeJS", "js", "html", "css", "mongoDB"],
+    list: ["nodeJS", "javascript", "html", "css", "mongoDB"],
   },
   {
     type: "backEnd",

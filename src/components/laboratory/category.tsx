@@ -27,11 +27,6 @@ export const LaboratoryCategory = () => {
       btnColorHover(refs.showAll.current, "over");
     }
   });
-  const onSpanClick = (e: any) => {
-    // const btnHead: any = overTarget?.id.split("-")[1];
-    // const btnSub = e.target.id.split("-")[1].toLowerCase();
-    // currentCategory(btnHead, btnSub);
-  };
   const onClick = (e: any, target: Element) => {
     if (e.target.id.split("-")[0] === "cat") {
       const btnSub = e.target.id.split("-")[1].toLowerCase();
@@ -90,10 +85,7 @@ export const LaboratoryCategory = () => {
         onMouseLeave={() => onMouseLeave(refs.frontEnd.current)}
       >
         <LaboratoryBTN name={"Front-End"} />
-        <CategoryBtnList
-          list={["Javascript", "React", "Html", "Css-Scss"]}
-          onSpanClick={onSpanClick}
-        />
+        <CategoryBtnList list={["Javascript", "React", "Html", "Css-Scss"]} />
       </div>
       <div
         id={"cat-backEnd"}

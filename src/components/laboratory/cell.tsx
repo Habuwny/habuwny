@@ -9,30 +9,40 @@ interface LaboratoryCellInterface {
   body: string;
   list: string[];
   bottom: string;
+  tape: string;
+  ribbonClass?: string;
 }
 export const LaboratoryCell = ({
   hed,
   body,
   bottom,
   list,
+  tape,
+  ribbonClass,
 }: LaboratoryCellInterface) => {
   const theme = useTypedSelector((state) => state.theme.currentTheme);
   const currCategory = useTypedSelector((state) => state.category);
   useEffect(() => {
     const currTheme = theme.split("_")[0];
-    laboratoryCellSetts(currTheme);
-  }, [theme, currCategory]); //eslint-disable-line react-hooks/exhaustive-deps
+    laboratoryCellSetts(currTheme, tape);
+  }, [list]); //eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className={"laboratoryCell"}>
-      <div className={"laboratoryCell__hed"}>{hed}</div>
+      <div id={`ribbon__${tape}`} className={`ribbon`}>
+        <span>{tape}</span>
+      </div>
+      <div className={`laboratoryCell__hed laboratoryCell__${hed}`}>
+        <span>{hed}</span>
+      </div>
       <div className={"laboratoryCell__body"}>
         <span className={"laboratoryCell__body-title"}>{body}</span>
         <div className={"laboratoryCell__body__tools"}>
           {list.map((tool, i) => {
+            console.log(tool);
             return (
               <span
                 key={`laboratoryCell__body__tools-${i + 1}`}
-                className={`laboratoryCell__body__tool laboratoryCell__body__tools-${
+                className={`laboratoryCell__body__tools-${tool} laboratoryCell__body__tool laboratoryCell__body__tools-${
                   i + 1
                 }`}
               >

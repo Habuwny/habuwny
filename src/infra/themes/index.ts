@@ -13,13 +13,7 @@ export const themeColors: any = {
       laboratory: {
         cell: {
           frontEnd: {
-            // head: "#ffba08",
-            head: "#FF8F08",
             body: "#7400b8",
-            js: "#323330",
-            react: "#1f65d0",
-            css: "#E67800",
-            html: "#013350",
           },
         },
       },
@@ -93,6 +87,23 @@ export const themeColors: any = {
       disabled: "#757575",
       error: "#D0421B",
       success: "#138000",
+      laboratory: {
+        cell: {
+          common: {
+            js: "#151302",
+            react: "#1f65d0",
+            css: "#E67800",
+            html: "#013350",
+            webpack: "#1c78c0",
+          },
+          frontEnd: {
+            head: "#df219f",
+          },
+          backEnd: {
+            head: "#096A10",
+          },
+        },
+      },
     },
     bg: {
       primary: "#000c1a",

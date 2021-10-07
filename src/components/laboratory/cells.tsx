@@ -11,10 +11,8 @@ export const LaboratoryCells = () => {
     const cells = locCellsData.filter((cell) => {
       if (currCategory.head === "showAll") return locCellsData;
       else if (currCategory.sub === "all") {
-        console.log(currCategory.head, currCategory.sub);
         return cell.type === currCategory.head;
       }
-      console.log(currCategory.head, currCategory.sub);
       return cell.type === currCategory.head && cell.sub === currCategory.sub;
     });
     setCurrCells(cells);
@@ -29,6 +27,7 @@ export const LaboratoryCells = () => {
               body={cell.body}
               bottom={cell.bottom}
               list={cell.list}
+              tape={cell.tape}
             />
           </div>
         );

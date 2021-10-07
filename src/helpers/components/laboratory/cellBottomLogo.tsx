@@ -1,8 +1,8 @@
-import { ReactLogo } from "../../../assets/react-logo";
-import { JSLogo } from "../../../assets/js-logo";
-import { NodeJsLogo } from "../../../assets/nodeJs-logo";
-import { CSSLogo } from "../../../assets/css-logo";
-import { HtmlLogo } from "../../../assets/html-logo";
+import { MongoDBLogo, PythonLogo, ReactLogo } from "../../../assets";
+import { JSLogo } from "../../../assets";
+import { NodeJsLogo } from "../../../assets";
+import { CSSLogo } from "../../../assets";
+import { HtmlLogo } from "../../../assets";
 
 interface BottomLogo {
   tool: string;
@@ -18,6 +18,10 @@ export const CellBottomLogo = ({ tool }: BottomLogo) => {
     return <CSSLogo />;
   } else if (tool === "Html") {
     return <HtmlLogo />;
+  } else if (tool === "MongoDB") {
+    return <MongoDBLogo />;
+  } else if (tool === "Python") {
+    return <PythonLogo />;
   }
   return <div>{""}</div>;
 };
