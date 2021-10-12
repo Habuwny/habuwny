@@ -11,6 +11,7 @@ ply.tsx
 
 # production
 /build
+playground.svg
 
 # misc
 .DS_Store

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { laboratoryCellSetts } from "../../helpers";
 import { useTypedSelector } from "../../hooks";
 import { CellBottomLogo } from "../../helpers";
+import { randomId } from "../../tools";
 
 interface LaboratoryCellInterface {
   hed: string;
@@ -20,12 +21,13 @@ export const LaboratoryCell = ({
   tape,
   ribbonClass,
 }: LaboratoryCellInterface) => {
-  const theme = useTypedSelector((state) => state.theme.currentTheme);
-  const currCategory = useTypedSelector((state) => state.category);
+  const theme = useTypedSelector((state) => state.theme.currentTheme).split(
+    "_"
+  )[0];
+  laboratoryCellSetts(theme);
   useEffect(() => {
-    const currTheme = theme.split("_")[0];
-    laboratoryCellSetts(currTheme, tape);
-  }, [list]); //eslint-disable-line react-hooks/exhaustive-deps
+    laboratoryCellSetts(theme);
+  }); //eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className={"laboratoryCell"}>
       <div id={`ribbon__${tape}`} className={`ribbon`}>
@@ -37,14 +39,11 @@ export const LaboratoryCell = ({
       <div className={"laboratoryCell__body"}>
         <span className={"laboratoryCell__body-title"}>{body}</span>
         <div className={"laboratoryCell__body__tools"}>
-          {list.map((tool, i) => {
-            console.log(tool);
+          {list.map((tool) => {
             return (
               <span
-                key={`laboratoryCell__body__tools-${i + 1}`}
-                className={`laboratoryCell__body__tools-${tool} laboratoryCell__body__tool laboratoryCell__body__tools-${
-                  i + 1
-                }`}
+                key={`laboratoryCell__body__tools-${randomId()}`}
+                className={`laboratoryCell__body__tools-${tool} laboratoryCell__body__tool`}
               >
                 {tool}
               </span>

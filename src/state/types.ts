@@ -23,7 +23,7 @@ export type BackCategorySub =
   | "nodeJs"
   | "php"
   | "python"
-  | "mongoDB"
+  | "mongodb"
   | "sql"
   | "postgres";
 export type ToolsCategorySub = "webstorm" | "github" | "pyCharm" | "vsCode";

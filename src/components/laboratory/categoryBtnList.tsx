@@ -38,6 +38,7 @@ export const CategoryBtnList = ({
       onMouseOver={onMouseOver}
     >
       {list.map((item) => {
+        console.log(item);
         return (
           <span
             id={`cat-${item}`}
