@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, MutableRefObject } from "react";
+import React, { MouseEventHandler } from "react";
 interface BtnProps {
   border: string;
   color: string;

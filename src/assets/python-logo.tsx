@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useEffect } from "react";
-import { pythonLogoAnime } from "../services/animation/components/laboratory/python";
+import { pythonLogoAnime } from "../services/animation/components/laboratory/logos/python";
 
 export const PythonLogo = () => {
   useEffect(() => {

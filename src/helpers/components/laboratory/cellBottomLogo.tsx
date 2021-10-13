@@ -1,12 +1,20 @@
-import { MongoDBLogo, PythonLogo, ReactLogo } from "../../../assets";
-import { JSLogo } from "../../../assets";
-import { NodeJsLogo } from "../../../assets";
-import { CSSLogo } from "../../../assets";
-import { HtmlLogo } from "../../../assets";
-import { PhpLogo } from "../../../assets/php-logo";
-import { WebStormLogo } from "../../../assets/webstorm-logo";
-import { GitHubLogo } from "../../../assets/github-logo";
-import { OthersLogo } from "../../../assets/others-logo";
+import {
+  MongoDBLogo,
+  PythonLogo,
+  ReactLogo,
+  CSSLogo,
+  HtmlLogo,
+  JSLogo,
+  NodeJsLogo,
+  OthersLogo,
+  PyCharmLogo,
+  SQLLogo,
+  WebStormLogo,
+  GitHubLogo,
+  PhpLogo,
+  PostgresLogo,
+} from "../../../assets";
+import { VSCode } from "../../../assets/vscode-logo";
 
 interface BottomLogo {
   tool: string;
@@ -21,6 +29,10 @@ export const CellBottomLogo = ({ tool }: BottomLogo) => {
   else if (tool === "Python") return <PythonLogo />;
   else if (tool === "Php") return <PhpLogo />;
   else if (tool === "Webstorm") return <WebStormLogo />;
+  else if (tool === "PyCharm") return <PyCharmLogo />;
   else if (tool === "Github") return <GitHubLogo />;
+  else if (tool === "SQL") return <SQLLogo />;
+  else if (tool === "Postgres") return <PostgresLogo />;
+  else if (tool === "VSCode") return <VSCode />;
   return <OthersLogo />;
 };

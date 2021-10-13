@@ -3,8 +3,6 @@ import { Full } from "./themes/full";
 import { Resize } from "./themes/resize";
 import { useTypedSelector } from "../../hooks";
 import gsap from "gsap";
-import { scaleTheme } from "../../helpers";
-const firstWidth = window.innerWidth;
 
 export const HomeThemes = () => {
   const [width, setWidth] = useState<number>(window.innerWidth);
@@ -12,8 +10,6 @@ export const HomeThemes = () => {
   const theme = useTypedSelector((state) => state.theme.currentTheme);
 
   useEffect(() => {
-    scaleTheme(firstWidth, theme);
-
     const onResize = () => {
       if (width === 800) {
         gsap.to(".heartSizeThemes", { y: "+=120" });

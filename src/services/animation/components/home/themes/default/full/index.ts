@@ -1,14 +1,16 @@
 import gsap from "gsap";
-import { drawCharacterTL } from "../../commons";
-import { drawParticle } from "../../commons";
-import { openLampSwitcher } from "../../commons";
-import { drawFlag } from "../../commons";
-import { penToBtn } from "../../commons";
-import { fillCharacter } from "../../commons";
-import { openLight } from "./openLight";
-import { nameToBio } from "../../commons";
+import {
+  drawCharacterTL,
+  drawParticle,
+  openLampSwitcher,
+  drawFlag,
+  penToBtn,
+  fillCharacter,
+  nameToBio,
+} from "../../commons";
 import { lamp } from "./lamp";
 import { themes } from "./themes";
+import { openLight } from "./openLight";
 
 export const defaultFullThemeAnimation = (back?: boolean) => {
   let master = gsap.timeline({});

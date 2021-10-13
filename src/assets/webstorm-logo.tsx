@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useEffect } from "react";
-import { jetBrainsLogoAnime } from "../services/animation/components/laboratory/jetbrains";
+import { jetBrainsLogoAnime } from "../services/animation/components/laboratory/logos/jetbrains";
 
 export const WebStormLogo = () => {
   useEffect(() => {

@@ -13,7 +13,12 @@ export const themeColors: any = {
       laboratory: {
         cell: {
           frontEnd: {
-            body: "#7400b8",
+            body: "#833a94",
+            head: "#242c65",
+          },
+          backEnd: {
+            body: "#833a94",
+            head: "#411D49",
           },
         },
       },
@@ -35,6 +40,18 @@ export const themeColors: any = {
       sevenfold: "#ffca0a",
       eightfold: "#efb034",
       ninefold: "#037c6e",
+      laboratory: {
+        cell: {
+          frontEnd: {
+            body: "#0049a4",
+            head: "#efb034",
+          },
+          backEnd: {
+            body: "#037c6e",
+            head: "#037c6e",
+          },
+        },
+      },
     },
     text: {
       primary: "#ECEFF6",
@@ -54,6 +71,18 @@ export const themeColors: any = {
       eightfold: "#B552F7",
       ninefold: "#ff99aa",
       frontEnd: "#f77f00",
+      laboratory: {
+        cell: {
+          frontEnd: {
+            body: "#8A1287",
+            head: "#62079F",
+          },
+          backEnd: {
+            body: "#8A1287",
+            head: "#B552F7",
+          },
+        },
+      },
     },
 
     text: {
@@ -73,6 +102,18 @@ export const themeColors: any = {
       sevenfold: "#9096AD",
       eightfold: "#606782",
       ninefold: "#40568c",
+      laboratory: {
+        cell: {
+          frontEnd: {
+            body: "#068d80",
+            head: "#40568c",
+          },
+          backEnd: {
+            body: "#068d80",
+            head: "#606782",
+          },
+        },
+      },
     },
     text: {
       primary: "#ECEFF6",
@@ -105,6 +146,10 @@ export const themeColors: any = {
             github: "#3E2F54",
             others: "#6c0163",
             mongoDB: "#13671E",
+            vsCode: "#00223D",
+            typescript: "#23568C",
+            sql: "#0079D6",
+            postgres: "#3C6585",
           },
           frontEnd: {
             head: "#df219f",

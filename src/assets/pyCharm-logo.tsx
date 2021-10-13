@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useEffect } from "react";
-import { jetBrainsLogoAnime } from "../services/animation/components/laboratory/jetbrains";
+import { jetBrainsLogoAnime } from "../services/animation/components/laboratory/logos/jetbrains";
 
 export const PyCharmLogo = () => {
   useEffect(() => {
@@ -39,12 +39,12 @@ export const PyCharmLogo = () => {
             fill="url(#_Linear5)"
           />
         </g>
-        <g id="pyCharmLogoName">
+        <g id="JetBrainsLogoName">
           <path id="JetBrainsLogoNameBack" d="M55.833 55.833h180v180h-180z" />
           <path
             d="M140.417 202.083h-67.5v11.25h67.5v-11.25zm-68.334-122.5H102.5c17.917 0 28.75 10.417 28.75 25.834v.416c0 17.084-13.333 26.25-30 26.25h-12.5v22.084H72.5V79.583h-.417zm29.584 37.5c8.333 0 12.916-5 12.916-11.25v-.416c0-7.5-5-11.25-13.333-11.25h-12.5v22.916h12.917zm36.25 0c0-21.25 15.833-38.75 38.75-38.75 14.166 0 22.5 4.584 29.583 11.667l-10.417 12.083c-5.833-5.416-11.666-8.333-19.166-8.333-12.5 0-21.667 10.417-21.667 23.333v-.416c0 12.916 8.75 23.333 21.667 23.333 8.333 0 13.75-3.333 19.583-8.75l10.417 10.417C199.167 150 190.417 155 176.25 155c-22.083.417-38.333-16.667-38.333-37.917"
             fill="#fff"
-            id="JetBrainsLogoNameLeters"
+            id="JetBrainsLogoNameLetters"
           />
         </g>
       </g>

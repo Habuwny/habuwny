@@ -88,7 +88,7 @@ export const locCellsData = [
     hed: "Back-End",
     body: "mongoDB with nodeJs, react and typescript",
     bottom: "Postgres",
-    list: ["nodeJS", "typescript", "Postgres"],
+    list: ["nodeJS", "typescript", "postgres"],
   },
 
   {

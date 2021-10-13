@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useEffect } from "react";
-import { otherLogoAnime } from "../services/animation/components/laboratory/others";
+import { otherLogoAnime } from "../services/animation/components/laboratory/logos/others";
 
 export const OthersLogo = () => {
   useEffect(() => {
